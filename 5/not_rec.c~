@@ -1,0 +1,13 @@
+/* 局所変数が一つだけなのでスタックにプッシュして先頭にgotoでトンで行ける。
+ *   再帰はなくなるけどもgotoが多くて、分かりにくい。
+ */
+
+traverse(struct node *t){
+ l: if(t == z) goto s;
+  visit(t);
+  push(t); t = t->l; goto l;
+ r: t = t->r; goto l;
+ s: if(stackempty()) goto x;
+  t = pop(); goto r;
+ s: ;
+}
