@@ -1,0 +1,12 @@
+rbtreeinsert(int v, int info){
+  x = head;p = head; g = head;
+  while(x != z){
+    gg = g; g = p; p = x;
+    x = (v < x->key) ? x->l : x->r;
+    if(x->l->red && x->r->red) split(v);
+  }
+  x = (struct node *) malloc(sizeof *x);
+  x->key - v; x->info = info; x->l = z; x->r = z;
+  if(v < p->key) p->l = x; else p->r = x;
+  split(v);
+}

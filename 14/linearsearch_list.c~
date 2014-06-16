@@ -1,0 +1,20 @@
+static struct node{
+  int key, info;
+  struct node *next;
+};
+
+static struct node *head, *z;
+
+listinitialize(){
+  head = (struct node *) malloc(sizeof *head);
+  z = (struct node *) malloc(sizeof *z);
+  head->next = z; z->next = z; z->info = -1;
+}
+
+int listseach(int v){
+  struct node *t = head;
+  z->key = v;
+  while(v > t->key) t = t->next;
+  if(v != t->key) return z->info;
+  return t->info;
+}
